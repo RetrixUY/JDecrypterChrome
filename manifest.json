@@ -1,7 +1,7 @@
 {
     "name": "JDecrypter",
-    "version": "1.0",
-    "author":"RetrixUY",
+    "version": "2.0",
+    "author": "RetrixUY",
     "description": "Decrypts and Show JDownloader \"Click n' Load\" Buttons",
     "icons": {
         "128": "logo128.png",
@@ -9,21 +9,18 @@
         "32": "logo32.png",
         "16": "logo16.png"
     },
-    "manifest_version": 2,
-    "background": {
-        "scripts": ["background.js","main.js","aes.js"],
-        "persistent": false
-    },
-    "permissions": ["declarativeContent","activeTab"],
-    "browser_action":{
+    "manifest_version": 3,
+    "minimum_chrome_version": "102",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
         "default_title": "JDecrypter",
         "default_popup": "popup.html"
     },
-    "content_scripts": [{ 
-        "matches": [ 
-            "http://*/*", 
-            "https://*/*" 
+    "content_scripts": [{
+        "matches": [
+            "http://*/*",
+            "https://*/*"
         ],
-        "js": ["aes.js","main.js"]
+        "js": ["aes.js", "main.js"]
     }]
 }
